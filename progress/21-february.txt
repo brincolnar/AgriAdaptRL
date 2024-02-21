@@ -1,0 +1,54 @@
+Points:
+
+1. Change q-learning to use pruned networks and entropy selected features DONE
+
+2. Plot reward throughout episodes DONE
+
+3. Create a plan for using DQN    DONE
+
+
+a) architecture
+
+DQN combines Q-learning with deep neural networks, using the network to approximate the Q-value function.
+
+We will need to define a neural network that will learn to approximate the Q-values.
+
+It will take the state as input and output Q-values for all possible actions.
+
+Output layer should have one neuron per possible action (3 actions in your setup)
+
+
+b) state
+
+The state could be represented by the intervalized features or continuous state spaces
+
+For instance, if we have three features ('Hue Std', 'Contrast', 'SIFT Features') and you're using their raw values as the state representation, your network's input layer should accept a vector of size 3. Preprocessing raw feature values might help (normalization).
+
+state could also be images
+
+
+c) experience replay
+
+Breaks the correlations between consecutive samples by mixing past experiences stored in a replay buffer with new experiences
+
+d) target network
+
+target network's Q-values are used to compute the target for the loss calculation.
+
+
+e) reward function
+
+designed to find accuracy-energy tradeoff
+
+example: R=A−λ⋅E    A - accuracy, E - energy
+
+
+4. Explore 1 other methodology for feature evaluation using entropy DONE
+
+
+mutual information of feature and entropy
+
+To rank features based on the mutual information between each feature and the performance entropy, we'll need to calculate the mutual information for each feature across all samples. This involves comparing the distributions of feature values with the entropy values of the pruned network performances.
+
+
+5. Reorganize github repository to use only essential files DONE
