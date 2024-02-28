@@ -1,0 +1,25 @@
+                  Feature  MI Score
+9          Std Saturation  0.214448
+13       Texture Contrast  0.194344
+17    Texture Correlation  0.179380
+7                Contrast  0.176856
+1          Std Brightness  0.172375
+4      Hue Hist Feature 1  0.168163
+6                 Hue Std  0.160046
+12          SIFT Features  0.158757
+14  Texture Dissimilarity  0.152060
+22          ExG-ExR Ratio  0.149604
+8         Mean Saturation  0.149138
+16         Texture Energy  0.139936
+18            Texture ASM  0.133920
+10         Max Saturation  0.127767
+20       Excess Red Index  0.118464
+21                   CIVE  0.115610
+3          Min Brightness  0.113655
+23             CIVE Ratio  0.091328
+0         Mean Brightness  0.077820
+19     Excess Green Index  0.075560
+15    Texture Homogeneity  0.031762
+5      Hue Hist Feature 2  0.026077
+11         Min Saturation  0.021400
+2          Max Brightness  0.011372
