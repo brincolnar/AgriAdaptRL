@@ -188,39 +188,5 @@ def ranks_features_on_mutual_information():
     return mi_scores_df
 
 
-entropy_diffs_ranking = rank_features()
 mi_score_rankings = ranks_features_on_mutual_information()
-
-''' REMOVE
-Plots 2 rankings next to each other
-'''
-def plot_rankings(ranked_features_by_entropy, ranked_features_by_mi):    
-    # Merging the rankings on the 'Feature' column to compare them side by side
-    merged_rankings = ranked_features_by_entropy.merge(ranked_features_by_mi, on='Feature', suffixes=('_entropy', '_mi'))
-    
-    # Setting up the plotting area
-    fig, ax = plt.subplots(figsize=(10, 8))
-    
-    # Number of features to plot
-    n_features = len(merged_rankings)
-    index = range(n_features)
-    
-    # Plotting entropy difference rankings
-    ax.barh(index, merged_rankings['Entropy Difference'], height=0.4, label='Entropy Difference', color='skyblue', align='edge')
-    
-    # Plotting mutual information score rankings
-    ax.barh([p + 0.4 for p in index], merged_rankings['MI Score'], height=0.4, label='Mutual Information Score', color='lightgreen', align='edge')
-    
-    # Setting feature names as y-ticks
-    plt.yticks([p + 0.2 for p in index], merged_rankings['Feature'])
-    
-    # Adding legend, title, and labels
-    plt.legend()
-    plt.title('Feature Rankings Comparison')
-    plt.xlabel('Score')
-    plt.ylabel('Feature')
-    
-    # Saving the plot as a PNG file
-    plt.tight_layout()
-    plt.savefig('feature_rankings_comparison.png')  # Specify the desired filename here
-
+print(mi_score_rankings)
