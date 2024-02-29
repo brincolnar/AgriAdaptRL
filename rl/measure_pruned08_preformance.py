@@ -8,9 +8,9 @@ from segmentation.data.data import ImageImporter
 from segmentation.helpers.metricise import Metricise
 
 image_resolution = (512,512)
-model_architecture = f"unet_{image_resolution[0]}"
-width = "100"
-model_key = f"{model_architecture}"
+model_architecture = f"unet_{image_resolution[0]}_pruned"
+width = "08"
+model_key = f"{model_architecture}_{width}_iterative_1"
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(device)
 model = unet(n_channels=3, n_classes=2, bilinear=False)
@@ -110,7 +110,7 @@ def _get_single_image(file_name, image_dir, label_dir):
 
     return img, mask, img_filename
 
-def infer100(file_name):
+def infer08(file_name):
     image, mask, filename = _get_single_image(file_name, image_dir, label_dir)
     
     y_pred = model(image)
@@ -138,12 +138,12 @@ if __name__ == "__main__":
     df = pd.read_csv(csv_file_path)
 
     for path in os.listdir(all_images_path):
-        results, probs, gt, filename = infer100(path)
+        results, probs, gt, filename = infer08(path)
 
-        df.loc[df['Filename'] == filename, 'pruned_0_performance'] = results['test/iou/weeds']
+        df.loc[df['Filename'] == filename, 'pruned_08_performance'] = results['test/iou/weeds']
 
         print(f"Filename: {filename}")
         print("Results: ")
         print(results)
 
-    df.to_csv('updated_features.csv', index=False)
+    df.to_csv('./features.csv', index=False)

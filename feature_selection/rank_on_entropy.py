@@ -134,7 +134,7 @@ Intervalizes chosen features only
 '''
 def intervalize_chosen_features(chosen_features):
     for feature in chosen_features:
-        assign_interval(feature, 3)
+        assign_interval(feature, 4)
 
     df.to_csv('features.csv', index=False)  
 
@@ -186,7 +186,3 @@ def ranks_features_on_mutual_information():
     mi_scores_df = pd.DataFrame({"Feature": features, "MI Score": mi_scores}).sort_values(by="MI Score", ascending=False)
 
     return mi_scores_df
-
-
-mi_score_rankings = ranks_features_on_mutual_information()
-print(mi_score_rankings)

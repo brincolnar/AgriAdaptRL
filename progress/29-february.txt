@@ -1,0 +1,25 @@
+29-2
+
+- find 100% UNet and make it work 
+
+- add 100% UNet scores to CSV containing features and scores 
+
+- preform 4 networks performance analysis for pruned networks (to find out which is best) 
+
+- update pruned scores entropy with newly added network 
+
+- update MI ranking 
+
+- adapt Q-learning to use all 4 networks and top MI (mutual information) ranked features 
+
+- adapt Q-learning to take into account energy usage approximation
+
+- figure out no. episodes to run Q-learning for and run it 
+
+- update Github repo
+
+- Pareto front - create 9 networks and choose 4 with best energy-accuracy tradeoff
+
+
+
+
