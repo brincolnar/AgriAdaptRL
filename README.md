@@ -11,3 +11,8 @@ Contains all graphs
 ```/rl```
 
 Contains reinforcement learning code and data required for it
+
+```/models```
+
+Contains models
+
