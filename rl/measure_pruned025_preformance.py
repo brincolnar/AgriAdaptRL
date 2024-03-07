@@ -130,3 +130,20 @@ def infer025(file_name):
     #    self._generate_images(image, mask, y_pred)
 
     return results, probs, gt, filename
+
+if __name__ == "__main__":
+    
+    all_images_path = "./all/images/"
+    csv_file_path = './features.csv'
+    df = pd.read_csv(csv_file_path)
+
+    for path in os.listdir(all_images_path):
+        results, probs, gt, filename = infer025(path)
+
+        df.loc[df['Filename'] == filename, 'pruned_025_performance'] = results['test/iou/weeds']
+
+        print(f"Filename: {filename}")
+        print("Results: ")
+        print(results)
+
+    df.to_csv('./features.csv', index=False)

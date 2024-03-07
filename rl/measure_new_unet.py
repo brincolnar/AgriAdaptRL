@@ -140,7 +140,7 @@ if __name__ == "__main__":
     for path in os.listdir(all_images_path):
         results, probs, gt, filename = infer100(path)
 
-        df.loc[df['Filename'] == filename, 'pruned_0_performance'] = results['test/iou/weeds']
+        df.loc[df['Filename'] == filename, 'new_unet_performance'] = results['test/iou/weeds']
 
         print(f"Filename: {filename}")
         print("Results: ")
