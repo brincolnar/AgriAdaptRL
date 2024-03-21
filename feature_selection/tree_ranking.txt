@@ -1,0 +1,25 @@
+Ranking of features by accuracy:
+1. Hue Hist Feature 1: 0.71875
+2. Contrast: 0.625
+3. Hue Std: 0.59375
+4. Std Brightness: 0.5625
+5. Min Brightness: 0.5625
+6. Hue Hist Feature 2: 0.53125
+7. Max Brightness: 0.5
+8. Excess Green Index: 0.5
+9. Max Saturation: 0.46875
+10. Texture Energy: 0.46875
+11. Mean Saturation: 0.4375
+12. SIFT Features: 0.4375
+13. Texture Correlation: 0.4375
+14. Excess Red Index: 0.4375
+15. CIVE Ratio: 0.4375
+16. Std Saturation: 0.40625
+17. CIVE: 0.375
+18. Mean Brightness: 0.34375
+19. ExG-ExR Ratio: 0.34375
+20. Min Saturation: 0.3125
+21. Texture Homogeneity: 0.3125
+22. Texture ASM: 0.3125
+23. Texture Contrast: 0.28125
+24. Texture Dissimilarity: 0.1875
