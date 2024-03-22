@@ -25,4 +25,34 @@ Ranking of features by accuracy:
 24. Min Saturation: 0.3125
 
 
-Obtained with DecisionTreeClassifier(random_state=42, max_depth=3)
+features['best_network'] = features[['new_unet_performance', 'pruned_01_performance', 'pruned_03_performance' ]].idxmax(axis=1)
+
+
+
+Ranking of features by accuracy:
+1. Texture Homogeneity: 0.875
+2. Hue Std: 0.8125
+3. Contrast: 0.8125
+4. Texture Correlation: 0.8125
+5. ExG-ExR Ratio: 0.8125
+6. Max Brightness: 0.78125
+7. Hue Hist Feature 1: 0.78125
+8. Hue Hist Feature 2: 0.78125
+9. Std Brightness: 0.75
+10. SIFT Features: 0.75
+11. Texture Energy: 0.75
+12. Excess Green Index: 0.75
+13. Max Saturation: 0.71875
+14. Texture Contrast: 0.71875
+15. Texture Dissimilarity: 0.71875
+16. Texture ASM: 0.71875
+17. Excess Red Index: 0.71875
+18. CIVE: 0.71875
+19. CIVE Ratio: 0.71875
+20. Mean Brightness: 0.6875
+21. Min Brightness: 0.6875
+22. Std Saturation: 0.6875
+23. Min Saturation: 0.6875
+24. Mean Saturation: 0.5625
+
+features['best_network'] = features[['new_unet_performance', 'pruned_06_performance', 'pruned_09_performance' ]].idxmax(axis=1)

@@ -1,0 +1,15 @@
+Node: test if Hue Std <= 16.83400058746338
+  Node: test if Hue Std <= 8.720499992370605
+    Node: test if Hue Std <= 7.200000047683716
+      Leaf: predict [0. 0. 1.], class: pruned_09_performance
+      Leaf: predict [0. 1. 1.], class: pruned_06_performance
+    Node: test if Hue Std <= 13.69350004196167
+      Leaf: predict [ 0. 11.  0.], class: pruned_06_performance
+      Leaf: predict [ 6. 17.  0.], class: pruned_06_performance
+  Node: test if Hue Std <= 33.06450080871582
+    Node: test if Hue Std <= 20.649500846862793
+      Leaf: predict [44. 10.  0.], class: new_unet_performance
+      Leaf: predict [27.  1.  0.], class: new_unet_performance
+    Node: test if Hue Std <= 34.47550010681152
+      Leaf: predict [0. 4. 1.], class: pruned_06_performance
+      Leaf: predict [0. 0. 2.], class: pruned_09_performance

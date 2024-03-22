@@ -1,0 +1,15 @@
+Node: test if Contrast <= 0.09449999779462814
+  Node: test if Contrast <= 0.07649999856948853
+    Node: test if Contrast <= 0.04900000058114529
+      Leaf: predict [0. 1. 1.], class: pruned_06_performance
+      Leaf: predict [ 0. 11.  0.], class: pruned_06_performance
+    Node: test if Contrast <= 0.07750000059604645
+      Leaf: predict [1. 0. 0.], class: new_unet_performance
+      Leaf: predict [ 6. 17.  1.], class: pruned_06_performance
+  Node: test if Contrast <= 0.1850000023841858
+    Node: test if Contrast <= 0.11549999937415123
+      Leaf: predict [44. 10.  0.], class: new_unet_performance
+      Leaf: predict [26.  1.  0.], class: new_unet_performance
+    Node: test if Contrast <= 0.19250000268220901
+      Leaf: predict [0. 4. 1.], class: pruned_06_performance
+      Leaf: predict [0. 0. 2.], class: pruned_09_performance
