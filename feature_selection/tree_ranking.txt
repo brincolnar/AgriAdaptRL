@@ -1,58 +1,29 @@
-Ranking of features by accuracy:
-1. Hue Std: 0.75
-2. Contrast: 0.75
-3. Hue Hist Feature 1: 0.71875
-4. Std Brightness: 0.6875
-5. Max Brightness: 0.6875
-6. Std Saturation: 0.59375
-7. Texture Contrast: 0.59375
-8. Min Brightness: 0.5625
-9. Max Saturation: 0.5625
-10. SIFT Features: 0.5625
-11. Texture Correlation: 0.5625
-12. Texture Energy: 0.53125
-13. Texture ASM: 0.53125
-14. Excess Red Index: 0.53125
-15. CIVE Ratio: 0.5
-16. Hue Hist Feature 2: 0.46875
-17. Texture Dissimilarity: 0.4375
-18. Excess Green Index: 0.4375
-19. CIVE: 0.40625
-20. ExG-ExR Ratio: 0.40625
-21. Texture Homogeneity: 0.375
-22. Mean Brightness: 0.34375
-23. Mean Saturation: 0.34375
-24. Min Saturation: 0.3125
+y = 'pruned_01_performance','pruned_02_performance','pruned_03_performance','pruned_04_performance','pruned_06_performance','pruned_07_performance','pruned_08_performance','pruned_09_performance','new_unet_performance'
 
-
-features['best_network'] = features[['new_unet_performance', 'pruned_01_performance', 'pruned_03_performance' ]].idxmax(axis=1)
-
-
+x = given feature
 
 Ranking of features by accuracy:
-1. Texture Homogeneity: 0.875
-2. Hue Std: 0.8125
-3. Contrast: 0.8125
-4. Texture Correlation: 0.8125
-5. ExG-ExR Ratio: 0.8125
-6. Max Brightness: 0.78125
-7. Hue Hist Feature 1: 0.78125
-8. Hue Hist Feature 2: 0.78125
-9. Std Brightness: 0.75
-10. SIFT Features: 0.75
-11. Texture Energy: 0.75
-12. Excess Green Index: 0.75
-13. Max Saturation: 0.71875
-14. Texture Contrast: 0.71875
-15. Texture Dissimilarity: 0.71875
-16. Texture ASM: 0.71875
-17. Excess Red Index: 0.71875
-18. CIVE: 0.71875
-19. CIVE Ratio: 0.71875
-20. Mean Brightness: 0.6875
-21. Min Brightness: 0.6875
-22. Std Saturation: 0.6875
-23. Min Saturation: 0.6875
-24. Mean Saturation: 0.5625
-
-features['best_network'] = features[['new_unet_performance', 'pruned_06_performance', 'pruned_09_performance' ]].idxmax(axis=1)
+1. Texture Correlation: 0.4375
+2. CIVE: 0.4375
+3. Std Brightness: 0.375
+4. Hue Std: 0.375
+5. SIFT Features: 0.375
+6. Texture Contrast: 0.375
+7. Texture Dissimilarity: 0.375
+8. Texture Homogeneity: 0.375
+9. Texture Energy: 0.375
+10. Texture ASM: 0.375
+11. Excess Red Index: 0.375
+12. ExG-ExR Ratio: 0.375
+13. CIVE Ratio: 0.375
+14. Contrast: 0.3125
+15. Mean Saturation: 0.3125
+16. Std Saturation: 0.3125
+17. Max Saturation: 0.3125
+18. Excess Green Index: 0.3125
+19. Min Brightness: 0.25
+20. Hue Hist Feature 1: 0.25
+21. Min Saturation: 0.25
+22. Hue Hist Feature 2: 0.1875
+23. Max Brightness: 0.125
+24. Mean Brightness: 0.0625

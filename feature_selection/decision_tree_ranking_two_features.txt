@@ -1,0 +1,280 @@
+Ranking of feature pairs by accuracy:
+1. ('Std Brightness', 'CIVE'): 0.78125
+2. ('Std Brightness', 'ExG-ExR Ratio'): 0.78125
+3. ('Max Brightness', 'Hue Hist Feature 1'): 0.78125
+4. ('Hue Std', 'Texture Dissimilarity'): 0.78125
+5. ('Hue Std', 'Texture Energy'): 0.78125
+6. ('Hue Std', 'Excess Green Index'): 0.78125
+7. ('Hue Std', 'CIVE Ratio'): 0.78125
+8. ('Contrast', 'Excess Green Index'): 0.78125
+9. ('Contrast', 'CIVE Ratio'): 0.78125
+10. ('Mean Brightness', 'Hue Std'): 0.75
+11. ('Mean Brightness', 'Contrast'): 0.75
+12. ('Std Brightness', 'Hue Std'): 0.75
+13. ('Std Brightness', 'Contrast'): 0.75
+14. ('Max Brightness', 'Hue Std'): 0.75
+15. ('Min Brightness', 'Hue Std'): 0.75
+16. ('Hue Hist Feature 1', 'Hue Hist Feature 2'): 0.75
+17. ('Hue Hist Feature 1', 'Hue Std'): 0.75
+18. ('Hue Hist Feature 2', 'Hue Std'): 0.75
+19. ('Hue Hist Feature 2', 'Contrast'): 0.75
+20. ('Hue Std', 'Contrast'): 0.75
+21. ('Hue Std', 'Std Saturation'): 0.75
+22. ('Hue Std', 'Max Saturation'): 0.75
+23. ('Hue Std', 'Min Saturation'): 0.75
+24. ('Hue Std', 'SIFT Features'): 0.75
+25. ('Hue Std', 'Texture Contrast'): 0.75
+26. ('Hue Std', 'Texture Homogeneity'): 0.75
+27. ('Hue Std', 'Texture ASM'): 0.75
+28. ('Hue Std', 'Excess Red Index'): 0.75
+29. ('Contrast', 'Std Saturation'): 0.75
+30. ('Contrast', 'Max Saturation'): 0.75
+31. ('Contrast', 'Min Saturation'): 0.75
+32. ('Contrast', 'Texture Homogeneity'): 0.75
+33. ('Mean Brightness', 'Hue Hist Feature 1'): 0.71875
+34. ('Std Brightness', 'Max Brightness'): 0.71875
+35. ('Std Brightness', 'Hue Hist Feature 1'): 0.71875
+36. ('Std Brightness', 'Mean Saturation'): 0.71875
+37. ('Std Brightness', 'Texture Correlation'): 0.71875
+38. ('Std Brightness', 'Texture ASM'): 0.71875
+39. ('Std Brightness', 'Excess Red Index'): 0.71875
+40. ('Min Brightness', 'Hue Hist Feature 1'): 0.71875
+41. ('Hue Hist Feature 1', 'Min Saturation'): 0.71875
+42. ('Hue Hist Feature 1', 'Texture Energy'): 0.71875
+43. ('Hue Hist Feature 1', 'Excess Green Index'): 0.71875
+44. ('Hue Hist Feature 1', 'CIVE Ratio'): 0.71875
+45. ('Hue Std', 'Texture Correlation'): 0.71875
+46. ('Hue Std', 'CIVE'): 0.71875
+47. ('Hue Std', 'ExG-ExR Ratio'): 0.71875
+48. ('Mean Brightness', 'Std Saturation'): 0.6875
+49. ('Mean Brightness', 'Texture Homogeneity'): 0.6875
+50. ('Std Brightness', 'Hue Hist Feature 2'): 0.6875
+51. ('Std Brightness', 'Min Saturation'): 0.6875
+52. ('Std Brightness', 'SIFT Features'): 0.6875
+53. ('Std Brightness', 'Texture Energy'): 0.6875
+54. ('Max Brightness', 'Contrast'): 0.6875
+55. ('Max Brightness', 'Min Saturation'): 0.6875
+56. ('Min Brightness', 'Contrast'): 0.6875
+57. ('Hue Hist Feature 1', 'Mean Saturation'): 0.6875
+58. ('Hue Hist Feature 1', 'SIFT Features'): 0.6875
+59. ('Hue Hist Feature 1', 'Texture Contrast'): 0.6875
+60. ('Hue Hist Feature 1', 'Texture Homogeneity'): 0.6875
+61. ('Hue Hist Feature 1', 'Texture ASM'): 0.6875
+62. ('Hue Hist Feature 1', 'CIVE'): 0.6875
+63. ('Contrast', 'Mean Saturation'): 0.6875
+64. ('Contrast', 'SIFT Features'): 0.6875
+65. ('Contrast', 'Texture Contrast'): 0.6875
+66. ('Contrast', 'Texture Dissimilarity'): 0.6875
+67. ('Contrast', 'Texture Energy'): 0.6875
+68. ('Mean Saturation', 'Texture Contrast'): 0.6875
+69. ('Mean Brightness', 'Std Brightness'): 0.65625
+70. ('Mean Brightness', 'Texture Energy'): 0.65625
+71. ('Std Brightness', 'Texture Contrast'): 0.65625
+72. ('Std Brightness', 'Texture Dissimilarity'): 0.65625
+73. ('Std Brightness', 'Texture Homogeneity'): 0.65625
+74. ('Min Brightness', 'Hue Hist Feature 2'): 0.65625
+75. ('Hue Hist Feature 1', 'Contrast'): 0.65625
+76. ('Hue Hist Feature 1', 'Std Saturation'): 0.65625
+77. ('Hue Hist Feature 1', 'Texture Dissimilarity'): 0.65625
+78. ('Hue Hist Feature 1', 'Texture Correlation'): 0.65625
+79. ('Hue Hist Feature 1', 'ExG-ExR Ratio'): 0.65625
+80. ('Hue Hist Feature 2', 'Excess Red Index'): 0.65625
+81. ('Contrast', 'Texture ASM'): 0.65625
+82. ('Contrast', 'Excess Red Index'): 0.65625
+83. ('Contrast', 'CIVE'): 0.65625
+84. ('Contrast', 'ExG-ExR Ratio'): 0.65625
+85. ('Mean Saturation', 'Std Saturation'): 0.65625
+86. ('Mean Saturation', 'Excess Green Index'): 0.65625
+87. ('Mean Saturation', 'ExG-ExR Ratio'): 0.65625
+88. ('Mean Saturation', 'CIVE Ratio'): 0.65625
+89. ('Std Saturation', 'CIVE'): 0.65625
+90. ('Max Saturation', 'CIVE'): 0.65625
+91. ('Max Saturation', 'CIVE Ratio'): 0.65625
+92. ('Texture Contrast', 'Texture Energy'): 0.65625
+93. ('Texture Dissimilarity', 'Texture Energy'): 0.65625
+94. ('Texture Homogeneity', 'Texture Energy'): 0.65625
+95. ('Texture Energy', 'Excess Green Index'): 0.65625
+96. ('Texture Energy', 'CIVE Ratio'): 0.65625
+97. ('Mean Brightness', 'Max Brightness'): 0.625
+98. ('Std Brightness', 'Min Brightness'): 0.625
+99. ('Max Brightness', 'Min Brightness'): 0.625
+100. ('Max Brightness', 'Std Saturation'): 0.625
+101. ('Max Brightness', 'Texture Correlation'): 0.625
+102. ('Max Brightness', 'Excess Red Index'): 0.625
+103. ('Min Brightness', 'Std Saturation'): 0.625
+104. ('Min Brightness', 'Texture Energy'): 0.625
+105. ('Min Brightness', 'Excess Red Index'): 0.625
+106. ('Min Brightness', 'CIVE Ratio'): 0.625
+107. ('Hue Hist Feature 1', 'Excess Red Index'): 0.625
+108. ('Hue Hist Feature 2', 'Mean Saturation'): 0.625
+109. ('Hue Hist Feature 2', 'SIFT Features'): 0.625
+110. ('Hue Hist Feature 2', 'Texture Energy'): 0.625
+111. ('Contrast', 'Texture Correlation'): 0.625
+112. ('Mean Saturation', 'Texture Homogeneity'): 0.625
+113. ('Mean Saturation', 'Texture Correlation'): 0.625
+114. ('Std Saturation', 'Texture Contrast'): 0.625
+115. ('Std Saturation', 'Texture Homogeneity'): 0.625
+116. ('Std Saturation', 'Excess Green Index'): 0.625
+117. ('Max Saturation', 'ExG-ExR Ratio'): 0.625
+118. ('Excess Green Index', 'CIVE'): 0.625
+119. ('CIVE', 'CIVE Ratio'): 0.625
+120. ('Mean Brightness', 'Min Brightness'): 0.59375
+121. ('Mean Brightness', 'SIFT Features'): 0.59375
+122. ('Mean Brightness', 'Texture Contrast'): 0.59375
+123. ('Mean Brightness', 'Excess Green Index'): 0.59375
+124. ('Mean Brightness', 'CIVE Ratio'): 0.59375
+125. ('Std Brightness', 'Std Saturation'): 0.59375
+126. ('Std Brightness', 'Max Saturation'): 0.59375
+127. ('Std Brightness', 'CIVE Ratio'): 0.59375
+128. ('Max Brightness', 'SIFT Features'): 0.59375
+129. ('Max Brightness', 'Texture Contrast'): 0.59375
+130. ('Min Brightness', 'Texture Contrast'): 0.59375
+131. ('Min Brightness', 'CIVE'): 0.59375
+132. ('Min Brightness', 'ExG-ExR Ratio'): 0.59375
+133. ('Hue Hist Feature 1', 'Max Saturation'): 0.59375
+134. ('Hue Hist Feature 2', 'Std Saturation'): 0.59375
+135. ('Hue Hist Feature 2', 'Texture Dissimilarity'): 0.59375
+136. ('Hue Std', 'Mean Saturation'): 0.59375
+137. ('Std Saturation', 'Max Saturation'): 0.59375
+138. ('Std Saturation', 'Min Saturation'): 0.59375
+139. ('Std Saturation', 'Texture Dissimilarity'): 0.59375
+140. ('Std Saturation', 'CIVE Ratio'): 0.59375
+141. ('Max Saturation', 'Texture Contrast'): 0.59375
+142. ('Max Saturation', 'Excess Green Index'): 0.59375
+143. ('Min Saturation', 'Texture Contrast'): 0.59375
+144. ('Min Saturation', 'Excess Green Index'): 0.59375
+145. ('Texture Contrast', 'Texture Homogeneity'): 0.59375
+146. ('Mean Brightness', 'Mean Saturation'): 0.5625
+147. ('Mean Brightness', 'Texture Correlation'): 0.5625
+148. ('Mean Brightness', 'CIVE'): 0.5625
+149. ('Std Brightness', 'Excess Green Index'): 0.5625
+150. ('Max Brightness', 'Mean Saturation'): 0.5625
+151. ('Max Brightness', 'Max Saturation'): 0.5625
+152. ('Max Brightness', 'Texture Homogeneity'): 0.5625
+153. ('Max Brightness', 'Excess Green Index'): 0.5625
+154. ('Max Brightness', 'CIVE Ratio'): 0.5625
+155. ('Min Brightness', 'Max Saturation'): 0.5625
+156. ('Min Brightness', 'Min Saturation'): 0.5625
+157. ('Min Brightness', 'Excess Green Index'): 0.5625
+158. ('Mean Saturation', 'SIFT Features'): 0.5625
+159. ('Mean Saturation', 'Texture Energy'): 0.5625
+160. ('Std Saturation', 'SIFT Features'): 0.5625
+161. ('Std Saturation', 'Texture Correlation'): 0.5625
+162. ('Max Saturation', 'Min Saturation'): 0.5625
+163. ('Max Saturation', 'Texture Homogeneity'): 0.5625
+164. ('Max Saturation', 'Texture Energy'): 0.5625
+165. ('Max Saturation', 'Excess Red Index'): 0.5625
+166. ('Min Saturation', 'SIFT Features'): 0.5625
+167. ('Min Saturation', 'Texture Correlation'): 0.5625
+168. ('SIFT Features', 'Texture Contrast'): 0.5625
+169. ('SIFT Features', 'Texture Dissimilarity'): 0.5625
+170. ('SIFT Features', 'Texture Homogeneity'): 0.5625
+171. ('SIFT Features', 'Texture Energy'): 0.5625
+172. ('SIFT Features', 'Texture Correlation'): 0.5625
+173. ('SIFT Features', 'Texture ASM'): 0.5625
+174. ('SIFT Features', 'Excess Green Index'): 0.5625
+175. ('SIFT Features', 'Excess Red Index'): 0.5625
+176. ('SIFT Features', 'CIVE'): 0.5625
+177. ('SIFT Features', 'ExG-ExR Ratio'): 0.5625
+178. ('SIFT Features', 'CIVE Ratio'): 0.5625
+179. ('Texture Contrast', 'Texture Dissimilarity'): 0.5625
+180. ('Texture Contrast', 'Texture Correlation'): 0.5625
+181. ('Texture Dissimilarity', 'CIVE'): 0.5625
+182. ('Texture Homogeneity', 'Texture Correlation'): 0.5625
+183. ('Texture Homogeneity', 'CIVE'): 0.5625
+184. ('Texture Energy', 'Texture Correlation'): 0.5625
+185. ('Texture Correlation', 'Excess Green Index'): 0.5625
+186. ('Texture Correlation', 'Excess Red Index'): 0.5625
+187. ('Texture Correlation', 'CIVE Ratio'): 0.5625
+188. ('Excess Green Index', 'Excess Red Index'): 0.5625
+189. ('Excess Red Index', 'CIVE Ratio'): 0.5625
+190. ('Mean Brightness', 'Max Saturation'): 0.53125
+191. ('Mean Brightness', 'Texture ASM'): 0.53125
+192. ('Mean Brightness', 'Excess Red Index'): 0.53125
+193. ('Max Brightness', 'Hue Hist Feature 2'): 0.53125
+194. ('Max Brightness', 'Texture ASM'): 0.53125
+195. ('Min Brightness', 'Mean Saturation'): 0.53125
+196. ('Min Brightness', 'SIFT Features'): 0.53125
+197. ('Min Brightness', 'Texture Homogeneity'): 0.53125
+198. ('Min Brightness', 'Texture Correlation'): 0.53125
+199. ('Min Brightness', 'Texture ASM'): 0.53125
+200. ('Hue Hist Feature 2', 'Max Saturation'): 0.53125
+201. ('Mean Saturation', 'Max Saturation'): 0.53125
+202. ('Mean Saturation', 'Min Saturation'): 0.53125
+203. ('Std Saturation', 'Excess Red Index'): 0.53125
+204. ('Max Saturation', 'SIFT Features'): 0.53125
+205. ('Max Saturation', 'Texture Correlation'): 0.53125
+206. ('Max Saturation', 'Texture ASM'): 0.53125
+207. ('Min Saturation', 'Texture Energy'): 0.53125
+208. ('Min Saturation', 'Texture ASM'): 0.53125
+209. ('Min Saturation', 'Excess Red Index'): 0.53125
+210. ('Texture Contrast', 'Texture ASM'): 0.53125
+211. ('Texture Contrast', 'Excess Red Index'): 0.53125
+212. ('Texture Dissimilarity', 'Texture ASM'): 0.53125
+213. ('Texture Dissimilarity', 'Excess Red Index'): 0.53125
+214. ('Texture Homogeneity', 'Texture ASM'): 0.53125
+215. ('Texture Homogeneity', 'Excess Red Index'): 0.53125
+216. ('Texture Energy', 'Texture ASM'): 0.53125
+217. ('Texture Energy', 'Excess Red Index'): 0.53125
+218. ('Texture ASM', 'Excess Green Index'): 0.53125
+219. ('Texture ASM', 'CIVE Ratio'): 0.53125
+220. ('Mean Brightness', 'Texture Dissimilarity'): 0.5
+221. ('Max Brightness', 'Texture Dissimilarity'): 0.5
+222. ('Hue Hist Feature 2', 'CIVE'): 0.5
+223. ('Hue Hist Feature 2', 'ExG-ExR Ratio'): 0.5
+224. ('Hue Hist Feature 2', 'CIVE Ratio'): 0.5
+225. ('Mean Saturation', 'Texture Dissimilarity'): 0.5
+226. ('Min Saturation', 'CIVE Ratio'): 0.5
+227. ('Texture Homogeneity', 'CIVE Ratio'): 0.5
+228. ('Mean Brightness', 'Hue Hist Feature 2'): 0.46875
+229. ('Max Brightness', 'Texture Energy'): 0.46875
+230. ('Max Brightness', 'CIVE'): 0.46875
+231. ('Hue Hist Feature 2', 'Texture Contrast'): 0.46875
+232. ('Texture Contrast', 'CIVE'): 0.46875
+233. ('Texture Dissimilarity', 'Excess Green Index'): 0.46875
+234. ('Min Brightness', 'Texture Dissimilarity'): 0.4375
+235. ('Hue Hist Feature 2', 'Texture Homogeneity'): 0.4375
+236. ('Hue Hist Feature 2', 'Texture Correlation'): 0.4375
+237. ('Hue Hist Feature 2', 'Texture ASM'): 0.4375
+238. ('Hue Hist Feature 2', 'Excess Green Index'): 0.4375
+239. ('Mean Saturation', 'Excess Red Index'): 0.4375
+240. ('Mean Saturation', 'CIVE'): 0.4375
+241. ('Std Saturation', 'Texture Energy'): 0.4375
+242. ('Max Saturation', 'Texture Dissimilarity'): 0.4375
+243. ('Min Saturation', 'Texture Dissimilarity'): 0.4375
+244. ('Texture Contrast', 'Excess Green Index'): 0.4375
+245. ('Texture Contrast', 'CIVE Ratio'): 0.4375
+246. ('Texture Dissimilarity', 'Texture Homogeneity'): 0.4375
+247. ('Texture Dissimilarity', 'CIVE Ratio'): 0.4375
+248. ('Texture Homogeneity', 'Excess Green Index'): 0.4375
+249. ('Texture Correlation', 'CIVE'): 0.4375
+250. ('Excess Green Index', 'CIVE Ratio'): 0.4375
+251. ('Mean Saturation', 'Texture ASM'): 0.40625
+252. ('Std Saturation', 'ExG-ExR Ratio'): 0.40625
+253. ('Min Saturation', 'CIVE'): 0.40625
+254. ('Min Saturation', 'ExG-ExR Ratio'): 0.40625
+255. ('Texture Energy', 'CIVE'): 0.40625
+256. ('Texture Energy', 'ExG-ExR Ratio'): 0.40625
+257. ('Excess Green Index', 'ExG-ExR Ratio'): 0.40625
+258. ('Excess Red Index', 'CIVE'): 0.40625
+259. ('ExG-ExR Ratio', 'CIVE Ratio'): 0.40625
+260. ('Mean Brightness', 'ExG-ExR Ratio'): 0.375
+261. ('Max Brightness', 'ExG-ExR Ratio'): 0.375
+262. ('Min Saturation', 'Texture Homogeneity'): 0.375
+263. ('Texture Contrast', 'ExG-ExR Ratio'): 0.375
+264. ('Texture Dissimilarity', 'ExG-ExR Ratio'): 0.375
+265. ('Texture Homogeneity', 'ExG-ExR Ratio'): 0.375
+266. ('Texture ASM', 'ExG-ExR Ratio'): 0.375
+267. ('Mean Brightness', 'Min Saturation'): 0.34375
+268. ('Texture Dissimilarity', 'Texture Correlation'): 0.34375
+269. ('Texture ASM', 'CIVE'): 0.34375
+270. ('CIVE', 'ExG-ExR Ratio'): 0.34375
+271. ('Hue Hist Feature 2', 'Min Saturation'): 0.3125
+272. ('Texture Correlation', 'ExG-ExR Ratio'): 0.3125
+273. ('Excess Red Index', 'ExG-ExR Ratio'): 0.3125
+274. ('Std Saturation', 'Texture ASM'): 0.28125
+275. ('Texture Correlation', 'Texture ASM'): 0.28125
+276. ('Texture ASM', 'Excess Red Index'): 0.28125
+
+
+features['best_network'] = features[['new_unet_performance', 'pruned_01_performance', 'pruned_03_performance' ]].idxmax(axis=1)
