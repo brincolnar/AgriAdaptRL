@@ -1,18 +1,18 @@
 # AgriAdaptRL
 
-```/feature selection```
-
-Contains data and code related to feature selection
-
-```/plots```
-
-Contains all graphs
 
 ```/rl```
 
-Contains reinforcement learning code and data required for it
+Contains reinforcement learning algorithms: DeepQLearning on images features, DeepQLearning on images
 
-```/models```
+```/bandits```
 
-Contains models
+Contains multi-armed bandit algorithms:  UCB (Upper Confidence Bound), Thompson sampling and Epsilon-Greedy 
 
+```/data```
+
+Contains data on which algorithms were trained
+
+```./FixedNetworkEvaluation.py```
+
+For baseline evaluation
