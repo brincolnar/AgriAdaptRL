@@ -16,6 +16,7 @@ from NetworkSelectionEnvImages import NetworkSelectionEnvImages
 from ReplayBuffer import ReplayBuffer
 from utils_images import evaluate_model, plot_test_split, moving_average, evaluate_test
 from hyperparams import EPISODES, EPSILON, EPSILON_START, EPSILON_END, EPSILON_DECAY, GAMMA, LEARNING_RATE, PERFORMANCE_FACTOR, NUM_ITERATIONS, BATCH_SIZE, TARGET_UPDATE
+import numpy as np
 
 network_performance_columns = [
     '0%', '25%', '50%', '75%'
@@ -52,81 +53,83 @@ class ConvDQN(nn.Module):
         x = F.relu(self.fc1(x))
         return self.fc2(x)
 
+def load_data(files):
+    combined_df = pd.DataFrame()
+    for file in files:
+        df = pd.read_csv(file)
+        combined_df = pd.concat([combined_df, df], ignore_index=True)
+    return combined_df
+
 if __name__ == "__main__":
+    NUM_TRAIN_DATASETS = 10
 
     # Setup
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-    # Original network
+    train_files = [f'dataset_{i}.csv' for i in range(1, NUM_TRAIN_DATASETS)]
+    test_file = f'dataset_{NUM_TRAIN_DATASETS}.csv'
+
+    train_df = load_data(train_files)
+    test_df = pd.read_csv(test_file)
+
+    test_env = NetworkSelectionEnvImages(dataframe=test_df, image_folder='../data/ordered_train_test/all/images/', performance_factor=PERFORMANCE_FACTOR, device=device, verbose=False)
+
     model = ConvDQN().to(device)
     optimizer = optim.Adam(model.parameters(), lr=LEARNING_RATE)
-
-    # Target network
     target_model = ConvDQN().to(device)
     target_model.load_state_dict(model.state_dict())
-    target_model.eval()  # Set the target network to evaluation mode
+    target_model.eval()  
 
     loss_fn = nn.SmoothL1Loss() # nn.MSELoss(), nn.SmoothL1Loss() (other losses)
-
-    # Load the dataset
-    features_file = pd.read_csv('./features.csv')
-    performance_file = pd.read_csv('./performance_results.csv')
-
-    combined_df = pd.merge(features_file, performance_file, left_on='Filename', right_on='Filename')
-    performance_columns = ['0%', '25%', '50%', '75%']
-    combined_df['best_network'] = combined_df[performance_columns].idxmax(axis=1)
-    combined_df = combined_df[~(combined_df[network_performance_columns] == 0).all(axis=1)]
 
     verbose = True 
 
     results = []
-    
-    env = NetworkSelectionEnvImages(dataframe=combined_df, 
-    image_folder='./data/ordered_train_test/all/images/', 
-    performance_factor=PERFORMANCE_FACTOR,
-    device='cuda',
-    verbose=False)
 
     replay_buffer = ReplayBuffer(capacity=BATCH_SIZE)
 
 
     # Train
-    for i in range(NUM_ITERATIONS):
-        epsilon = EPSILON_START
+    for i in range(1, NUM_TRAIN_DATASETS + 1):
+        epsilon = EPSILON
         losses = []
 
+
         print("========================================================")
-        print(f"Iteration {i} starting...")
+        print(f"Dataset {i} starting...")
         print("========================================================")
 
-        
-        state = env.reset()  # Reset the environment
+        train_df = pd.read_csv(f'./dataset_{i}.csv')
+
+        train_env = NetworkSelectionEnvImages(
+            dataframe=train_df, 
+            image_folder='./data/ordered_train_test/all/images/', 
+            performance_factor=PERFORMANCE_FACTOR, 
+            device=device, 
+            verbose=False)
+
+        state = train_env.reset()  # Reset the environment
         state = state.to(device).unsqueeze(0)
 
-        filenames = []
         ious = []
         weights = []
         battery_levels = []
 
-        for t in tqdm(range(len(env.dataframe)), desc=f'Iteration {i}'):
+        for t in tqdm(range(len(train_env.dataframe)), desc=f'Training'):
             # Select action
             if random.random() > epsilon:
                 with torch.no_grad():
                     action = model(state).argmax().item()
             else:
-                action = env.sample_action()
-            
-            # epsilon = max(EPSILON_END, EPSILON_START * (EPSILON_DECAY ** t))  # Decay epsilon
-            epsilon = EPSILON
+                action = train_env.sample_action()
 
             # Execute action
-            next_state, reward, done = env.get_next_state_reward(action)
+            next_state, reward, done = train_env.get_next_state_reward(action)
             next_state = next_state.unsqueeze(0) 
 
-            filenames.append(env.dataframe.iloc[env.current_idx]['Filename'])
-            ious.append(env.dataframe.iloc[env.current_idx][action_to_network_mapping[action]])
+            ious.append(train_env.dataframe.iloc[train_env.current_idx][action_to_network_mapping[action]])
             weights.append(network_to_weight_mapping[action])
-            battery_levels.append(env.battery)
+            battery_levels.append(train_env.battery)
             
             replay_buffer.push(state, action, reward, next_state, done)
 
@@ -158,36 +161,20 @@ if __name__ == "__main__":
                 optimizer.step()
 
             state = next_state
+
+        average_iou = np.mean(ious)
+        average_weight = np.mean(weights)
+        last_battery_level = battery_levels[-1]  # Last battery level recorded
+
+        # Print the results
+        print(f"Dataset {i} completed.")
+        print(f"Average IoU: {average_iou:.4f}")
+        print(f"Average Weight: {average_weight:.4f}")
+        print(f"Last Battery Level: {last_battery_level:.4f}")
         
-        results_df = pd.DataFrame({
-            'Filename': filenames,
-            'DQN': ious,
-            'DQNWeight': weights
-        })
-
-        results_df.to_csv('deepqlearning_results.csv', index=False)
-        print("Results have been saved to 'deepqlearning_results.csv'.")
-
-        average_weight = sum(weights) / len(weights)
-        average_iou = sum(ious) / len(ious) 
-        last_battery_level = battery_levels[-1]
-        
-        print(f"Average Weight: {average_weight}")
-        print(f"Average IoU: {average_iou}")
-        print(f"Last Battery Level: {last_battery_level}")
-
-        # evaluate_test(ious, weights, battery_levels)
-
-        total_images = len(weights)
-        third = total_images // 3
-
-        first_third_avg_weight = sum(weights[:third]) / third
-        second_third_avg_weight = sum(weights[third:2*third]) / third
-        third_third_avg_weight = sum(weights[2*third:]) / (total_images - 2*third)
-
-        moving_average_ious = moving_average(ious, window_size=5)
-        moving_average_weights = moving_average(weights, window_size=5)
-        moving_average_battery_levels = moving_average(battery_levels, window_size=5)
+        moving_average_ious = moving_average(ious, window_size=1)
+        moving_average_weights = moving_average(weights, window_size=1)
+        moving_average_battery_levels = moving_average(battery_levels, window_size=1)
 
         plt.figure(figsize=(15, 15))
 
@@ -207,10 +194,6 @@ if __name__ == "__main__":
         plt.title('Weight Over Images')
         plt.legend()
 
-        plt.text(x=max(len(weights)*0.1, 10), y=max(weights)*0.8, s=f'1st Third Avg Weight: {first_third_avg_weight:.2f}')
-        plt.text(x=max(len(weights)*0.45, 10), y=max(weights)*0.8, s=f'2nd Third Avg Weight: {second_third_avg_weight:.2f}')
-        plt.text(x=max(len(weights)*0.8, 10), y=max(weights)*0.8, s=f'3rd Third Avg Weight: {third_third_avg_weight:.2f}')
-
         # Plot for Battery Levels
         plt.subplot(3, 1, 3)  # This means 3 rows, 1 column, and this plot is the 3rd
         plt.plot(moving_average_battery_levels, label='Battery Level', color='red')
@@ -220,5 +203,12 @@ if __name__ == "__main__":
         plt.legend()
 
         plt.tight_layout()
-        plt.savefig(f"./results.png", bbox_inches='tight')
+        plt.savefig(f"./results_{i}.png", bbox_inches='tight')
 
+        plt.figure(figsize=(10,5))
+        plt.plot(losses, label='Loss')
+        plt.xlabel('Training Steps')    
+        plt.ylabel('Loss')
+        plt.legend()
+        plt.savefig(f"./loss_{i}.png", bbox_inches='tight')
+    print("----------------------------------------------------------")

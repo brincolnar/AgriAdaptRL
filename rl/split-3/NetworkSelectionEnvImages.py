@@ -9,6 +9,7 @@ from RewardFunctions import linear_factor, logarithmic_factor_40, logarithmic_fa
 import numpy as np
 from fit_polynomial_curve import poly_fit, coefs25, coefs50, coefs75, coefs100
 
+
 class NetworkSelectionEnvImages:
     def __init__(self, dataframe, image_folder, performance_factor, device, resize_dim=(84, 84), verbose=False):
         self.dataframe = dataframe.copy()
@@ -36,11 +37,8 @@ class NetworkSelectionEnvImages:
 
         self.battery = 100
         
-        # For difficulty 
-        # self.energy_costs = { '0%': 4, '25%': 3, '50%': 2, '75%': 1 }
-        
         # For images
-        self.energy_costs = { '0%': 0.5, '25%': 0.25, '50%': 0.125, '75%': 0.0625 }
+        self.energy_costs = { '0%': 1.625, '25%': 0.8125, '50%': 0.4062, '75%': 0.2031 }
 
         self.reset()
 
@@ -98,34 +96,38 @@ class NetworkSelectionEnvImages:
         if self.verbose:        
             print(f"Battery level: {self.battery}")
 
-        coefs = {
-            '0%': coefs100,
-            '25%': coefs25,
-            '50%': coefs50,
-            '75%': coefs75,
-        }
-        
+        # Calculate reward
+        # coefs = {
+        #     '0%': coefs100,
+        #     '25%': coefs25, # 25% pruned
+        #     '50%': coefs50, # 50% pruned
+        #     '75%': coefs75, # 75% pruned
+        # }
+
         # reward = np.polyval(coefs[selected_network], self.battery) * 100 + selected_network_performance * 100
-    
+        
+        # Reward scheme 2: images left, battery, performance
         # Amount of images left (normalized to [0, 1])
-        images_left = len(self.dataframe) - self.current_idx - 1
-        images_left_normalized = images_left / len(self.dataframe)
+        # images_left = len(self.dataframe) - self.current_idx - 1
+        # images_left_normalized = images_left / len(self.dataframe)
 
-        # Battery normalized
-        battery_normalized = (self.battery / 100.0)
+        # Battery
+        # battery_normalized = (self.battery / 100.0)
 
-        # Energy cost normalized
-        max_energy_cost = max(self.energy_costs.values())
-        energy_cost_normalized = self.energy_costs[selected_network] / max_energy_cost
+        # Energy cost of action
+        # max_energy_cost = max(self.energy_costs.values())
+        # energy_cost_normalized = self.energy_costs[selected_network] / max_energy_cost
+        # efficiency = 1 - energy_cost_normalized
 
-        performance_weight = battery_normalized * images_left_normalized
+        # performance_weight = battery_normalized * images_left_normalized
+        # efficiency_weight = 1 - performance_weight
 
-        reward = (
-            performance_weight * selected_network_performance + (1.0 - performance_weight) * energy_cost_normalized
-        )
+        # reward = (
+        #     performance_weight * selected_network_performance + efficiency_weight * efficiency
+        # )
 
-        network_to_normalized_weight = {"0%": 0.00, "25%": 0.25, "50%": 0.50, "75%": 0.75}
-        # reward = (selected_network_performance * self.PERFORMANCE_FACTOR) + (1.0 - self.PERFORMANCE_FACTOR) * network_to_normalized_weight[selected_network]
+        # Reward scheme 3: weighted sum
+        reward = (selected_network_performance * self.PERFORMANCE_FACTOR) + (1.0 - self.PERFORMANCE_FACTOR) * (1 - self.energy_costs[selected_network])
 
         # Move to the next image
         self.current_idx = (self.current_idx + 1) % len(self.dataframe)
